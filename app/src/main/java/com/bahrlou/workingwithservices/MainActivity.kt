@@ -1,5 +1,6 @@
 package com.bahrlou.workingwithservices
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,5 +17,12 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        startMyService()
+    }
+
+    private fun startMyService() {
+        val intent = Intent(this, LogService::class.java)
+        startService(intent) //background Service
     }
 }
